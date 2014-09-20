@@ -2,10 +2,13 @@
 ## Class:       Coursera Getting and Cleaning Data.
 ## Assignment:  Course Project.
 ## Filename:    run_analysis.R.
-## Date:        9/14/2014
+## Date:        9/19/2014
 ## Data:        "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-## Code book:   CodeBook.R
+## Code book:   CodeBook.md
 ## Readme:      README.md
+## 
+##
+## setwd("K:\\jean\\2014\\projects\\Coursera\\GettingAndCleaningData\\courseProject\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\")
 ########################################
 
 rm(list=ls())

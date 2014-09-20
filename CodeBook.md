@@ -1,18 +1,21 @@
 ---
-title: "Coursera Getting and Cleaning Data Course Project"
+title: "Code Book for Coursera Getting and Cleaning Data Course Project"
 author: "https://github.com/robotoid2014"
-date: "Wednesday, September 17, 2014"
+date: "Friday, September 19, 2014"
 output: html_document
 ---
 #Code book
 ###Data Dictionary
 
+Summary: The tidy data set contains 180 rows and 68 columns.  
+The tidy data set contains the mean of the mean() or std() of each feature per subject per activity.  
+Please see the README file for instructions.  
     
 1. subject. Person volunteer, age 19-48, randomly partitioned into two sets (Training, Test).
     + Data type: integer 1-30
     + Sample data:
         + Training subjects: 1 3 5 6 7 8 11 14 15 16 17 19 21 22 23 25 26 27 28 29 30
-        + Test subjects: 2 4 9 10 12 13 18 20 24
+        + Test subjects: 2 4 9 10 12 13 18 20 24  
 
 2. activityLabel. Each volunteer performed six activities.
     + Data type: chr
@@ -22,12 +25,18 @@ output: html_document
         + 3. WALKING_DOWNSTAIRS
         + 4. SITTING
         + 5. STANDING
-        + 6. LAYING
+        + 6. LAYING   
 
-3. 66 selected features: mean of the mean() or std() of each feature per subject per activity.  
-        Note that the original names were kept, except for "mean_" prefixes,  
-        to make it easier to match the features back to the original features.  
-        Please refer to the source's readme.txt and features_info.txt for explanations of the features.  
+3. 66 selected features: 
+        + Only 66 of the 561 features have mean() or std() as part of their names.
+          These 66 were selected for the tidy data set.
+          The features with mean and std without the "()" were not included because features like  
+          meanFreq() are weighted averages, a different calculation than average.  
+        + Note that other than adding on "mean_" as a prefix, the original names were kept    
+          to make it easier to match the features back to the original features.  
+        + Please refer to the source's readme.txt and features_info.txt for details of the features.  However, a summary is below.  
+        + Data type: numeric.  
+        + Sample data: 0.27733076 -0.01738382
         
     1.  mean_tBodyAcc-mean()-X  
     2.	mean_tBodyAcc-mean()-Y  
@@ -94,5 +103,30 @@ output: html_document
     63.	mean_fBodyBodyGyroMag-mean()
     64.	mean_fBodyBodyGyroMag-std()
     65.	mean_fBodyBodyGyroJerkMag-mean()
-    66.	mean_fBodyBodyGyroJerkMag-std()
+    66.	mean_fBodyBodyGyroJerkMag-std()  
+    
+    
+4.  Summary from features_info.txt regarding what the features represent.  
+    Further clarification by contacting the source of the data might be a good idea for a concise and detailed recipe  
+    covering all manipulation of raw data.
+    + Acc: accelerometer 3-axial signals.
+    + Body: body linear acceleration signals.  Accelerometer signal using low pass Butterworth filter with corner frequency of 0.3 Hz.
+    + f: frequency domain signals.  Fast Fourier Transform (FFT) was applied to these.
+    + Gravity: accelerometer signal using low pass Butterworth filter with corner frequency of 0.3 Hz.
+    + Gyro: gyroscope 3-axial signals.
+    + Jerk: angular velocity signals.
+    + Mag: magnitude calculated using Euclidean norm.
+    + mean(): mean value.
+    + std(): standard deviation.
+    + t: time domain signals captured at constant rate of 50 Hz.
+    + XYZ: 3-axial signals in the X, Y and Z directions.  
+    
+    
+5.  Units of features: It appears that Acc features are gravity and Gyro are radians/second.
+    + The acceleration signals are standard gravity units "g" in the Inertial Signals directory.
+    + The angular velocity signals from the gyroscope are radians/second in the Inertial Signals directory.  
+    
+    
+    
+    
     

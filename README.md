@@ -1,13 +1,13 @@
 ---
-title: "Coursera Getting and Cleaning Data Course Project"
+title: "README for Coursera Getting and Cleaning Data Course Project"
 author: "https://github.com/robotoid2014"
-date: "Wednesday, September 17, 2014"
+date: "Friday, September 19, 2014"
 output: html_document
 ---
 
 ## Included
 * Raw data:     https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
-    + Note that the data from this source is NOT raw.   
+    + Note that the raw data from this source has been manipulated.  (See downloaded features_info.txt and readme.txt.)   
 * Tidy data set: tidydata.txt  
 * Code book:    CodeBook.md  
 * R code:       run_analysis.R  
@@ -94,14 +94,37 @@ Copied from forum at https://class.coursera.org/getdata-007/forum/thread?thread_
     
 8.  Execute the run_analysis.R file to create the tidy data set: source("run_analysis.R")
     
-9.  Test the tidy data set against both the train and test data sets.  (R script not included here, but tests were run.)
+9.  Test results.  (R script not included here.)
     + For train example: 
         + Subject 1 is in the train file rows 1 -347.  
         + Activity 1 for Subject 1 is rows 79:125 & rows 249-296.  
+        + X_Train mean of first 6 features for Subject 1, Activity 1:
+            + 0.27733076 -0.01738382 -0.11114810 -0.28374026  0.11446134 -0.26002790  
+        + Tidy data set first row:  
+            +  1 WALKING 0.2773308  -0.01738382  -0.1111481  -0.2837403  0.1144613 -0.2600279  
     + For test example: 
         + Subject 24 is in the test file rows 2567 - 2947.  
         + Activity 4 for Subject 24 is rows 2600 - 2633 & 2790 - 2823.  
+        + X_Test mean of features for Subject 24, Activity 4:
+            + 2.734757e-01 -1.312551e-02 -1.030411e-01 -9.905938e-01 -9.562560e-01 -9.570561e-01
+        + Tidy data set:  
+            + 24 SITTING 0.2734757 -0.01312551 -0.1030411 -0.9905938 -0.956256 -0.9570561
     
-
+    
+10.  Here is the R command to read in the tidy data set:  
+    + df1 <- read.table("tidydata.txt", header=TRUE, sep = ",", dec = ".")
+    
+11. Raw data notes  
+    + The data from the source is all manipulated, even in the Inertial Signal subdirectories.  
+    The following paper discusses some of the computations, but it does not explain
+    exactly the steps involved creating the data files.  Contacting the source for 
+    the unmanipulated data files and raw steps might be needed to have a thorough understanding
+    of the data itself.
+    +    www.icephd.org/sites/default/files/IWAAL2012.pdf
+    
+    
+    
+    
+    
 
 
