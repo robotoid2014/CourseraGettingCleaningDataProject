@@ -7,8 +7,6 @@
 ## Code book:   CodeBook.md
 ## Readme:      README.md
 ## 
-##
-## setwd("K:\\jean\\2014\\projects\\Coursera\\GettingAndCleaningData\\courseProject\\getdata_projectfiles_UCI HAR Dataset\\UCI HAR Dataset\\")
 ########################################
 
 rm(list=ls())
